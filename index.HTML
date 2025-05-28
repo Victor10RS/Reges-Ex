@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transportadora - Menu com Abas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .tab-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #e0e0e0;
+    }
+
+    .tab-button {
+      padding: 15px 20px;
+      background-color: #e0e0e0;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      flex: 1 1 100%;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-button.active {
+      background-color: white;
+      border-bottom: 2px solid #004aad;
+      color: #004aad;
+    }
+
+    .tab-content {
+      padding: 20px;
+      display: none;
+      background-color: white;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .tab-button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Transportadora RápidoSul</h1>
+    <p>Conectando você ao seu destino</p>
+  </header>
+
+  <div class="tab-menu">
+    <button class="tab-button active" onclick="showTab('inicio')">Início</button>
+    <button class="tab-button" onclick="showTab('rastreio')">Rastreio</button>
+    <button class="tab-button" onclick="showTab('coletas')">Coletas</button>
+    <button class="tab-button" onclick="showTab('fretes')">Fretes</button>
+    <button class="tab-button" onclick="showTab('contato')">Contato</button>
+  </div>
+
+  <div id="inicio" class="tab-content active">
+    <h2>Bem-vindo à RápidoSul</h2>
+    <p>Somos uma transportadora especializada em entregas rápidas, seguras e confiáveis em todo o Brasil.</p>
+  </div>
+
+  <div id="rastreio" class="tab-content">
+    <h2>Rastrear Encomenda</h2>
+    <p>Digite seu código de rastreio no app ou entre em contato com nossa central.</p>
+  </div>
+
+  <div id="coletas" class="tab-content">
+    <h2>Solicitar Coleta</h2>
+    <p>Entre em contato para agendar uma coleta em seu endereço. Serviço disponível de segunda a sábado.</p>
+  </div>
+
+  <div id="fretes" class="tab-content">
+    <h2>Tabela de Frete</h2>
+    <p>Consulte nossos valores e prazos de entrega para cada região. Fretes personalizados sob consulta.</p>
+  </div>
+
+  <div id="contato" class="tab-content">
+    <h2>Fale Conosco</h2>
+    <p>Email: contato@rapidosul.com.br<br>Telefone: (11) 99999-9999<br>WhatsApp: (11) 98888-8888</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Transportadora RápidoSul. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      // Remove classe ativa de todas as abas e botões
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Ativa o conteúdo e botão clicado
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
